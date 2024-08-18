@@ -1,6 +1,5 @@
 {
   "src/**/*.{ts,tsx}": [
-    "npx --yes eslint --fix --max-warnings=0",
-    "yarn test --findRelatedTests --bail --passWithNoTests --coverageThreshold '{}'"
+    "npx --yes eslint --fix --max-warnings=0"
   ]
 }

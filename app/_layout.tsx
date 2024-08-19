@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 
+import { Provider } from '@/components';
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -23,8 +25,10 @@ export default function RootLayout() {
     return null;
   }
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <Provider>
+      <Stack>
+        <Stack.Screen name="index" />
+      </Stack>
+    </Provider>
   );
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>884462022086-db0pumr05c53llll5pipkigtfsujvdg0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.884462022086-db0pumr05c53llll5pipkigtfsujvdg0</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>884462022086-1nrue7ef000dcccahob2tqgjs019v140.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBzj7XEd8klqTkLIcpcWVd70gOdcOVGhFo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>884462022086</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zctechs.churrasapp</string>
+	<key>PROJECT_ID</key>
+	<string>churras-app-54f02</string>
+	<key>STORAGE_BUCKET</key>
+	<string>churras-app-54f02.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:884462022086:ios:bb0f4c05744beff59c16c7</string>
+</dict>
+</plist>

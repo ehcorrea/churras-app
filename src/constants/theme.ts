@@ -15,7 +15,7 @@ export const theme = {
       large: rfvalue(18),
       xlarge: rfvalue(24),
       huge: rfvalue(30),
-      xhuge: rfvalue(26),
+      xhuge: rfvalue(36),
     },
   },
   colors: {
@@ -42,6 +42,12 @@ export const theme = {
       80: '#A8ACB9',
       50: '#C4C7D0',
       20: '#EBEBEB',
+    },
+    error: {
+      main: '#F30000',
+      80: '#F34C4C',
+      50: '#F38585',
+      20: '#F3BEBE',
     },
   },
   rfvalue,

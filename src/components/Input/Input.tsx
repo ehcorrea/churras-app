@@ -1,5 +1,5 @@
 import { forwardRef, useRef, useState } from 'react';
-import Icon from '@expo/vector-icons/FontAwesome6';
+import { Ionicons } from '@expo/vector-icons/';
 import { useTheme } from 'styled-components/native';
 import {
   TextInput as TextInputRN,
@@ -39,7 +39,7 @@ const getInputState = ({
   return 'default';
 };
 
-export const TextInput = forwardRef<TextInputRN, TextInputProps>(
+export const Input = forwardRef<TextInputRN, TextInputProps>(
   (
     {
       containerProps,
@@ -79,7 +79,6 @@ export const TextInput = forwardRef<TextInputRN, TextInputProps>(
         >
           <S.Input
             {...props}
-            ref={ref || inputRef}
             secureTextEntry={secureTextEntry}
             onFocus={(e) => {
               setHasFocus(true);
@@ -97,20 +96,18 @@ export const TextInput = forwardRef<TextInputRN, TextInputProps>(
                 secureTextEntry ? 'mostrar senha' : 'esconder senha'
               }
             >
-              <Icon
-                color={theme.colors.primary.main}
-                name={secureTextEntry ? 'eye-slash' : 'eye'}
-                size={theme.rfvalue(18)}
+              <Ionicons
+                color={theme.colors.gray[50]}
+                name={secureTextEntry ? 'eye-off' : 'eye'}
+                size={theme.rfvalue(22)}
               />
             </TouchableOpacity>
           )}
         </S.Container>
-        <Spancing y={5} />
+        <Spancing y={1} />
         <Text pallet="error">{error}</Text>
-        <Spancing y={5} />
+        <Spancing y={2} />
       </TouchableOpacity>
     );
   }
 );
-
-export default TextInput;

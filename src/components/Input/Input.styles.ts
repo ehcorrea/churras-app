@@ -1,3 +1,4 @@
+import { TextInput } from 'react-native';
 import styled, { css, DefaultTheme } from 'styled-components/native';
 
 export type InputState = 'error' | 'focused' | 'default';
@@ -32,7 +33,7 @@ export const Container = styled.View<ContainerProps>`
   `}
 `;
 
-export const Input = styled.TextInput.attrs(({ theme }) => ({}))`
+export const Input = styled(TextInput)`
   ${({ theme }) => css`
     flex: 1;
     font-family: ${theme.font.weight.regular};

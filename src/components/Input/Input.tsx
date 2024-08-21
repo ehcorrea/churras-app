@@ -69,7 +69,7 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
 
     return (
       <TouchableOpacity onPress={handlePressContainer} className="w-full">
-        <Text pallet="gray" {...labelProps}>
+        <Text palette="gray" {...labelProps}>
           {label}
         </Text>
         <Spancing y={5} />
@@ -105,7 +105,7 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
           )}
         </S.Container>
         <Spancing y={1} />
-        <Text pallet="error">{error}</Text>
+        <Text palette="error">{error}</Text>
         <Spancing y={2} />
       </TouchableOpacity>
     );

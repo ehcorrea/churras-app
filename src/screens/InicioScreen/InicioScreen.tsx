@@ -4,6 +4,7 @@ import { ImageBackground } from 'expo-image';
 import { Spancing, Text } from '@/components';
 
 import * as S from './InicioScreen.styles';
+import { router } from 'expo-router';
 
 export function InicioScreen() {
   return (
@@ -16,14 +17,14 @@ export function InicioScreen() {
         <View className="flex-1">
           <View className="flex-1" />
           <View className="flex-3">
-            <S.Title pallet="gray" size={300}>
+            <S.Title palette="gray" size={300}>
               Bem-vindo ao
             </S.Title>
-            <S.Title pallet="primary" size={50}>
+            <S.Title palette="primary" size={50}>
               ChurrasApp
             </S.Title>
             <S.Subtitle>
-              Onde churrasco com os amigos, {'\n'} é compromisso.
+              Onde churrasco com os amigos, é compromisso.
             </S.Subtitle>
           </View>
           <View className="flex-1 items-center justify-center">
@@ -49,7 +50,11 @@ export function InicioScreen() {
               </S.ButtonSocial>
             </View>
             <Spancing y={10} />
-            <S.ButtonLogin>
+            <S.ButtonLogin
+              onPress={() => {
+                router.push('/criar-conta');
+              }}
+            >
               <S.TextLogin>Começar com email</S.TextLogin>
             </S.ButtonLogin>
           </View>

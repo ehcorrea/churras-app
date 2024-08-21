@@ -25,6 +25,7 @@ export const Title = styled(Text.Title).attrs({
 })<TitleProps>`
   ${({ theme, size }) => css`
     font-size: ${theme.rfvalue(size)}px;
+    line-height: ${theme.rfvalue(55)}px;
   `}
 `;
 

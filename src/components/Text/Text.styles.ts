@@ -1,9 +1,9 @@
-import { Color, FontSize, FontWeight, Pallet } from '@/types/theme';
+import { Color, FontSize, FontWeight, Palette } from '@/types/theme';
 import styled, { css } from 'styled-components/native';
 
 export type TextProps = {
   color?: Color;
-  pallet?: Pallet;
+  palette?: Palette;
   size?: FontSize;
   weight?: FontWeight;
 };
@@ -12,11 +12,11 @@ export const Text = styled.Text<TextProps>`
   ${({
     theme,
     color = 'main',
-    pallet = 'black',
+    palette = 'black',
     size = 'medium',
     weight = 'regular',
   }) => css`
-    color: ${theme.colors[pallet][color]};
+    color: ${theme.colors[palette][color]};
     font-family: ${theme.font.weight[weight]};
     font-size: ${theme.font.size[size]}px;
   `}

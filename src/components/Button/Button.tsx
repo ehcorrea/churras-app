@@ -1,8 +1,10 @@
 import { TouchableOpacityProps } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { TextProps } from '../Text/Text';
 
 import * as S from './Button.styles';
+import { router } from 'expo-router';
 
 export type ButtonProps = {
   children?: string;
@@ -51,4 +53,16 @@ const accountVariants = {
     label: 'GOOGLE',
     icon: <S.IconAccount source={require('@/assets/images/icon-google.svg')} />,
   },
+};
+
+Button.Back = () => {
+  const handlePress = () => {
+    router.back();
+  };
+
+  return (
+    <S.ButtonIcon elevation palette="white" onPress={handlePress}>
+      <MaterialIcons name="keyboard-arrow-left" size={28} color="black" />
+    </S.ButtonIcon>
+  );
 };

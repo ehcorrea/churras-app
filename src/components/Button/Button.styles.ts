@@ -62,3 +62,11 @@ export const IconAccount = styled(Image).attrs<ImageProps>({
     width: ${theme.rfvalue(30)}px;
   `}
 `;
+
+export const ButtonIcon = styled(Button)`
+  ${({ theme }) => css`
+    height: ${theme.rwvalue(38)}px;
+    width: ${theme.rwvalue(38)}px;
+    border-radius: ${theme.rfvalue(10)}px;
+  `}
+`;

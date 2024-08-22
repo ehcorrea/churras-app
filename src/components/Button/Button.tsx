@@ -1,14 +1,21 @@
 import { TouchableOpacityProps } from 'react-native';
 
+import { TextProps } from '../Text/Text';
+
 import * as S from './Button.styles';
 
-export type ButtonProps = { children?: string } & Partial<S.ButtonProps> &
+export type ButtonProps = {
+  children?: string;
+  icon?: React.ReactElement;
+  label?: TextProps;
+} & Partial<S.ButtonProps> &
   TouchableOpacityProps;
 
-export function Button({ children, ...props }: ButtonProps) {
+export function Button({ children, label, icon, ...props }: ButtonProps) {
   return (
     <S.Button {...props}>
-      <S.Label>{children}</S.Label>
+      {icon}
+      <S.Label {...label}>{children}</S.Label>
     </S.Button>
   );
 }

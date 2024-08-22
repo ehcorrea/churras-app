@@ -37,6 +37,12 @@ export const theme = {
       50: '#4D5364',
       20: '#6E7489',
     },
+    white: {
+      main: '#FFFFFF',
+      80: '#FFFFFF',
+      50: '#FFFFFF',
+      20: '#FFFFFF',
+    },
     gray: {
       main: '#9A9FAE',
       80: '#A8ACB9',
@@ -48,6 +54,14 @@ export const theme = {
       80: '#F34C4C',
       50: '#F38585',
       20: '#F3BEBE',
+    },
+  },
+  size: {
+    button: {
+      small: rhvalue(45),
+      medium: rhvalue(50),
+      large: rhvalue(55),
+      huge: rhvalue(60),
     },
   },
   rfvalue,

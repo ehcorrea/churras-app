@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/native';
+import { Image, ImageProps } from 'expo-image';
 
 import { theme } from '@/constants';
 import { Color, Palette } from '@/types/theme';
@@ -50,5 +51,14 @@ export const Label = styled(Text.Subtitle).attrs((props) => ({
 }))`
   ${({ theme }) => css`
     letter-spacing: ${theme.rfvalue(1)}px;
+  `}
+`;
+
+export const IconAccount = styled(Image).attrs<ImageProps>({
+  contentFit: 'contain',
+})`
+  ${({ theme }) => css`
+    height: ${theme.rfvalue(30)}px;
+    width: ${theme.rfvalue(30)}px;
   `}
 `;

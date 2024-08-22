@@ -19,3 +19,36 @@ export function Button({ children, label, icon, ...props }: ButtonProps) {
     </S.Button>
   );
 }
+
+type ButtonAccountProps = {
+  variant?: 'facebook' | 'google';
+} & ButtonProps;
+
+Button.Account = ({ variant = 'facebook', ...props }: ButtonAccountProps) => {
+  const variantProps = accountVariants[variant];
+  return (
+    <Button
+      className="flex-1"
+      elevation
+      icon={variantProps.icon}
+      label={{ palette: 'black' }}
+      palette="white"
+      {...props}
+    >
+      {variantProps.label}
+    </Button>
+  );
+};
+
+const accountVariants = {
+  facebook: {
+    label: 'FACEBOOK',
+    icon: (
+      <S.IconAccount source={require('@/assets/images/icon-facebook.svg')} />
+    ),
+  },
+  google: {
+    label: 'GOOGLE',
+    icon: <S.IconAccount source={require('@/assets/images/icon-google.svg')} />,
+  },
+};

@@ -1,12 +1,16 @@
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { ImageBackground } from 'expo-image';
-
-import { Spancing, Text } from '@/components';
-
-import * as S from './InicioScreen.styles';
 import { router } from 'expo-router';
 
+import { Button, Spancing } from '@/components';
+
+import * as S from './InicioScreen.styles';
+
 export function InicioScreen() {
+  const handleCriarConta = () => {
+    router.push('/criar-conta');
+  };
+
   return (
     <ImageBackground
       className="flex-1"
@@ -30,31 +34,17 @@ export function InicioScreen() {
           <View className="flex-1 items-center justify-center">
             <View className="flex-row w-full items-center">
               <S.Line />
-              <S.TextSocial>entrar usando</S.TextSocial>
+              <S.TextSocial>entrar com</S.TextSocial>
               <S.Line />
             </View>
             <Spancing y={10} />
             <View className="flex-row">
-              <S.ButtonSocial>
-                <S.IconFacebook />
-                <View className="flex-1 items-center">
-                  <Text>FACEBOOK</Text>
-                </View>
-              </S.ButtonSocial>
-              <Spancing x={20} />
-              <S.ButtonSocial>
-                <S.IconGoogle />
-                <View className="flex-1 items-center">
-                  <Text>GOOGLE</Text>
-                </View>
-              </S.ButtonSocial>
+              <Button.Account />
+              <Spancing x={10} />
+              <Button.Account variant="google" />
             </View>
             <Spancing y={10} />
-            <S.ButtonLogin
-              onPress={() => {
-                router.push('/criar-conta');
-              }}
-            >
+            <S.ButtonLogin>
               <S.TextLogin>Começar com email</S.TextLogin>
             </S.ButtonLogin>
           </View>
@@ -63,7 +53,9 @@ export function InicioScreen() {
       <S.Footer>
         <S.TextSignUp>Não possui uma conta?</S.TextSignUp>
         <Spancing x={2} />
-        <S.TextSignUp textDecoration="underline">Criar</S.TextSignUp>
+        <TouchableOpacity onPress={handleCriarConta}>
+          <S.TextSignUp textDecoration="underline">Criar</S.TextSignUp>
+        </TouchableOpacity>
       </S.Footer>
     </ImageBackground>
   );

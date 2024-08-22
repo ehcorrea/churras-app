@@ -1,6 +1,5 @@
 import { TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
-import { Image } from 'expo-image';
 import { LinearGradient, LinearGradientProps } from 'expo-linear-gradient';
 
 import { Text } from '@/components';
@@ -54,37 +53,6 @@ export const TextSocial = styled(Text).attrs({
     flex: 1;
     margin-horizontal: ${theme.rwvalue(20)}px;
     text-align: center;
-  `}
-`;
-
-export const ButtonSocial = styled(TouchableOpacity)`
-  ${({ theme }) => css`
-    align-items: center;
-    background-color: white;
-    border-radius: ${theme.rfvalue(30)}px;
-    flex-direction: row;
-    flex: 1;
-    padding-horizontal: ${theme.rhvalue(10)}px;
-    padding-vertical: ${theme.rhvalue(10)}px;
-  `}
-`;
-export const IconFacebook = styled(Image).attrs({
-  source: require('@/assets/images/icon-facebook.svg'),
-  contentFit: 'contain',
-})`
-  ${({ theme }) => css`
-    height: ${theme.rfvalue(30)}px;
-    width: ${theme.rfvalue(30)}px;
-  `}
-`;
-
-export const IconGoogle = styled(Image).attrs({
-  source: require('@/assets/images/icon-google.svg'),
-  contentFit: 'contain',
-})`
-  ${({ theme }) => css`
-    height: ${theme.rfvalue(25)}px;
-    width: ${theme.rfvalue(25)}px;
   `}
 `;
 

@@ -7,8 +7,15 @@ import * as S from './CriarContaScreen.styles';
 export function CriarContaScreen() {
   return (
     <>
-      <S.Header />
-      <ScrollView className="flex-1" contentContainerStyle={{ padding: '5%' }}>
+      <S.Header>
+        <Button.Back />
+      </S.Header>
+      <ScrollView
+        bounces={false}
+        className="flex-1"
+        contentContainerStyle={{ padding: '5%' }}
+        showsVerticalScrollIndicator={false}
+      >
         <Text.Title size="xhuge">Criar Conta</Text.Title>
         <Spancing y={15} />
         <Input label="Nome completo" />

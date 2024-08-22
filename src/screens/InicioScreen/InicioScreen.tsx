@@ -11,6 +11,10 @@ export function InicioScreen() {
     router.push('/criar-conta');
   };
 
+  const handleEntrarComEmail = () => {
+    router.push('/login');
+  };
+
   return (
     <ImageBackground
       className="flex-1"
@@ -44,7 +48,7 @@ export function InicioScreen() {
               <Button.Account variant="google" />
             </View>
             <Spancing y={10} />
-            <S.ButtonLogin>
+            <S.ButtonLogin onPress={handleEntrarComEmail}>
               <S.TextLogin>Começar com email</S.TextLogin>
             </S.ButtonLogin>
           </View>

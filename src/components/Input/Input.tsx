@@ -99,7 +99,7 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
               <Ionicons
                 color={theme.colors.gray[50]}
                 name={secureTextEntry ? 'eye-off' : 'eye'}
-                size={theme.rfvalue(22)}
+                size={theme.rfvalue(25)}
               />
             </TouchableOpacity>
           )}

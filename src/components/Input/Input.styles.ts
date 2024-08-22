@@ -25,7 +25,7 @@ export const Container = styled.View<ContainerProps>`
     border-radius: ${theme.rfvalue(10)}px;
     border-width: 1px;
     flex-direction: row;
-    height: ${theme.rhvalue(56)}px;
+    min-height: ${theme.rhvalue(50)}px;
     overflow: hidden;
     padding: ${theme.rfvalue(15)}px;
 

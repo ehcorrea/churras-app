@@ -14,9 +14,3 @@ export const Header = styled(Image).attrs({
 export const Label = styled(Text)`
   color: #5b5b5e;
 `;
-
-export const Line = styled.View`
-  background-color: #b3b3b380;
-  flex: 1;
-  height: 1px;
-`;

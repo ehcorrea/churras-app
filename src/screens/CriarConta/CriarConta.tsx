@@ -1,6 +1,6 @@
 import { ScrollView, View } from 'react-native';
 
-import { Spancing, Text, Input, Button } from '@/components';
+import { Spancing, Text, Input, Button, Line } from '@/components';
 
 import * as S from './CriarConta.styles';
 
@@ -26,11 +26,11 @@ export function CriarConta() {
         </View>
         <Spancing y={20} />
         <View className="flex-row flex-1 items-center">
-          <S.Line />
+          <Line />
           <Spancing x={13} />
           <S.Label>Criar com</S.Label>
           <Spancing x={13} />
-          <S.Line />
+          <Line />
         </View>
         <Spancing y={10} />
         <View className="flex-row">

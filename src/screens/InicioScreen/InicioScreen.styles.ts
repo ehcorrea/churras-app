@@ -36,12 +36,6 @@ export const Subtitle = styled(Text).attrs({ size: 'xlarge' })`
   `}
 `;
 
-export const Line = styled.View`
-  background-color: #ffffffa6;
-  flex: 1;
-  height: 1px;
-`;
-
 export const TextSocial = styled(Text).attrs({
   adjustsFontSizeToFit: true,
   numberOfLines: 1,

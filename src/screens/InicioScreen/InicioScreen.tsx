@@ -2,7 +2,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { ImageBackground } from 'expo-image';
 import { router } from 'expo-router';
 
-import { Button, Spancing } from '@/components';
+import { Button, Line, Spancing } from '@/components';
 
 import * as S from './InicioScreen.styles';
 
@@ -33,9 +33,9 @@ export function InicioScreen() {
           </View>
           <View className="flex-1 items-center justify-center">
             <View className="flex-row w-full items-center">
-              <S.Line />
+              <Line color="#ffffffa6" />
               <S.TextSocial>entrar com</S.TextSocial>
-              <S.Line />
+              <Line color="#ffffffa6" />
             </View>
             <Spancing y={10} />
             <View className="flex-row">

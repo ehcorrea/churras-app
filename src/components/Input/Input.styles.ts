@@ -33,7 +33,10 @@ export const Container = styled.View<ContainerProps>`
   `}
 `;
 
-export const Input = styled(TextInput)`
+export const Input = styled(TextInput).attrs(({ theme, ...props }) => ({
+  placeholderTextColor: '#C4C4C4',
+  ...props,
+}))`
   ${({ theme }) => css`
     flex: 1;
     font-family: ${theme.font.weight.regular};

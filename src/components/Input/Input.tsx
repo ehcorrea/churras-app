@@ -79,6 +79,7 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
         >
           <S.Input
             {...props}
+            ref={ref || inputRef}
             secureTextEntry={secureTextEntry}
             onFocus={(e) => {
               setHasFocus(true);

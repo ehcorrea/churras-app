@@ -18,8 +18,8 @@ export function LoginScreen() {
       >
         <Text.Title size="xhuge">Entrar</Text.Title>
         <Spancing y={15} />
-        <Input label="Email" />
-        <Input label="Senha" variant="password" />
+        <Input label="Email" placeholder="exemplo@email.com" />
+        <Input label="Senha" variant="password" placeholder="⦁⦁⦁⦁⦁⦁⦁" />
         <Spancing y={5} />
         <Text palette="primary" className="self-center">
           Esqueceu sua senha?

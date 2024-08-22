@@ -18,9 +18,10 @@ export function CriarContaScreen() {
       >
         <Text.Title size="xhuge">Criar Conta</Text.Title>
         <Spancing y={15} />
-        <Input label="Nome completo" />
-        <Input label="Email" />
-        <Input label="Senha" variant="password" />
+        <Input label="Nome" placeholder="Nome Completo" />
+        <Input label="Email" placeholder="exemplo@email.com" />
+        <Input label="Senha" variant="password" placeholder="⦁⦁⦁⦁⦁⦁⦁" />
+        <Input label="Repetir senha" variant="password" placeholder="⦁⦁⦁⦁⦁⦁⦁" />
         <Spancing y={5} />
         <Button elevation className="w-[60%] self-center">
           CRIAR CONTA

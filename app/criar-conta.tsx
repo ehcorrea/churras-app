@@ -1,3 +1,3 @@
-import { CriarConta } from '@/screens';
+import { CriarContaScreen } from '@/screens';
 
-export default CriarConta;
+export default CriarContaScreen;

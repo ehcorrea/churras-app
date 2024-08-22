@@ -7,7 +7,7 @@ import { Button, Line, Spancing } from '@/components';
 import * as S from './InicioScreen.styles';
 
 export function InicioScreen() {
-  const handleCriarConta = () => {
+  const handleCriarContaScreen = () => {
     router.push('/criar-conta');
   };
 
@@ -53,7 +53,7 @@ export function InicioScreen() {
       <S.Footer>
         <S.TextSignUp>Não possui uma conta?</S.TextSignUp>
         <Spancing x={2} />
-        <TouchableOpacity onPress={handleCriarConta}>
+        <TouchableOpacity onPress={handleCriarContaScreen}>
           <S.TextSignUp textDecoration="underline">Criar</S.TextSignUp>
         </TouchableOpacity>
       </S.Footer>

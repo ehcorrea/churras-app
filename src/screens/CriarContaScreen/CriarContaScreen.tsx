@@ -2,9 +2,9 @@ import { ScrollView, View } from 'react-native';
 
 import { Spancing, Text, Input, Button, Line } from '@/components';
 
-import * as S from './CriarConta.styles';
+import * as S from './CriarContaScreen.styles';
 
-export function CriarConta() {
+export function CriarContaScreen() {
   return (
     <>
       <S.Header />

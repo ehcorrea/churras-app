@@ -1,7 +1,7 @@
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 
-import { authFirebase } from '@/services/api';
+import { authEmail, authFirebase } from '@/services/api';
 
 import { useMutation } from '../useMutation/useMutation';
 
@@ -11,7 +11,13 @@ GoogleSignin.configure({
 
 export function useLogin() {
   const { login: loginGoogle } = useLoginGoogle();
-  return { loginGoogle };
+  const { login: loginEmail } = useLoginEmail();
+  return { loginGoogle, loginEmail };
+}
+
+function useLoginEmail() {
+  const { mutate } = useMutation({ mutationFn: authEmail });
+  return { login: mutate };
 }
 
 function useLoginGoogle() {

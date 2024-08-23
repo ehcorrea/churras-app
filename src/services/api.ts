@@ -6,6 +6,7 @@ type AuthResponse = {
     email: string;
     username: string;
     createdAt: Date;
+    displayName?: string;
   };
 };
 
@@ -22,6 +23,31 @@ type AuthFirebaseParams = {
 export async function authFirebase(params: AuthFirebaseParams) {
   const { data } = await client.post<AuthResponse>(
     `/api/firebase-auth`,
+    params
+  );
+  return data;
+}
+
+type AuthEmailParams = {
+  identifier: string;
+  password: string;
+};
+
+export async function authEmail(params: AuthEmailParams) {
+  const { data } = await client.post<AuthResponse>(`/api/auth/local`, params);
+  return data;
+}
+
+type CreateAccountParams = {
+  displayName: string;
+  email: string;
+  password: string;
+  username: string;
+};
+
+export async function createAccount(params: CreateAccountParams) {
+  const { data } = await client.post<AuthResponse>(
+    `/api/auth/local/register`,
     params
   );
   return data;

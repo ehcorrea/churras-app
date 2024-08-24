@@ -5327,6 +5327,7 @@ __metadata:
     expo-linear-gradient: ~13.0.2
     expo-linking: ~6.3.1
     expo-router: ~3.5.23
+    expo-secure-store: ~13.0.2
     expo-splash-screen: ~0.27.5
     expo-status-bar: ~1.12.1
     expo-system-ui: ~3.0.7
@@ -7391,6 +7392,15 @@ __metadata:
     react-native-reanimated:
       optional: true
   checksum: 27bf505c3f4faa2b00c43836bba4e52f5c3d1a153404e50d254499c2536c0e87cf8d6cc690e823819489824c8b8ecd784abdf10188b0317241fc648c3836468b
+  languageName: node
+  linkType: hard
+
+"expo-secure-store@npm:~13.0.2":
+  version: 13.0.2
+  resolution: "expo-secure-store@npm:13.0.2"
+  peerDependencies:
+    expo: "*"
+  checksum: 89d90bc9bbd7042ba28f15764184b672b51f0ca5dfe63b4c3f799f5280d95b79d1c2db8582f356154bf62bbcdda4560a6cc0e540a23c2cea9edeee45e97a10b3
   languageName: node
   linkType: hard
 

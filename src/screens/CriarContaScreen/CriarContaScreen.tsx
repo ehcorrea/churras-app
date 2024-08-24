@@ -1,12 +1,16 @@
 import { ScrollView, View } from 'react-native';
 
+import { createAccount } from '@/services/api';
 import { Spancing, Text, Input, Button, Line } from '@/components';
-import { useLogin } from '@/hooks';
+import { useLogin, useMutation } from '@/hooks';
 
 import * as S from './CriarContaScreen.styles';
 
 export function CriarContaScreen() {
-  const { loginGoogle } = useLogin();
+  const { loginGoogle, loginEmail } = useLogin();
+  const { mutate } = useMutation({
+    mutationFn: createAccount,
+  });
 
   return (
     <>
@@ -26,7 +30,18 @@ export function CriarContaScreen() {
         <Input label="Senha" variant="password" placeholder="⦁⦁⦁⦁⦁⦁⦁" />
         <Input label="Repetir senha" variant="password" placeholder="⦁⦁⦁⦁⦁⦁⦁" />
         <Spancing y={5} />
-        <Button elevation className="w-[60%] self-center">
+        <Button
+          elevation
+          className="w-[60%] self-center"
+          onPress={() =>
+            mutate({
+              displayName: 'placeholder-name',
+              username: 'placeholder-username',
+              email: 'placeholder-email',
+              password: 'placeholder-password',
+            })
+          }
+        >
           CRIAR CONTA
         </Button>
         <Spancing y={15} />
@@ -45,7 +60,14 @@ export function CriarContaScreen() {
         </View>
         <Spancing y={10} />
         <View className="flex-row">
-          <Button.Account />
+          <Button.Account
+            onPress={() =>
+              loginEmail({
+                identifier: 'ehcorrea96@gmail.com',
+                password: 'emilio@123',
+              })
+            }
+          />
           <Spancing x={10} />
           <Button.Account variant="google" onPress={loginGoogle} />
         </View>

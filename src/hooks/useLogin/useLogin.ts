@@ -1,7 +1,10 @@
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
+import { useEffect, useState } from 'react';
+import { GoogleSignin, User } from '@react-native-google-signin/google-signin';
+import firebaseAuth from '@react-native-firebase/auth';
 
 import { authEmail, authFirebase } from '@/services/api';
+import { authStore } from '@/stores/authStore';
+import { setHeaderAuthorization } from '@/services/client';
 
 import { useMutation } from '../useMutation/useMutation';
 
@@ -16,19 +19,41 @@ export function useLogin() {
 }
 
 function useLoginEmail() {
-  const { mutate } = useMutation({ mutationFn: authEmail });
+  const { setAuth } = authStore();
+  const { mutate } = useMutation({
+    mutationFn: authEmail,
+    options: {
+      onSuccess(data) {
+        setHeaderAuthorization(data.jwt);
+        setAuth({
+          jwt: data.jwt,
+          user: {
+            email: data.user.email,
+            inicio: data.user.createdAt,
+            nome: data.user.displayName!,
+            foto: null,
+          },
+        });
+      },
+    },
+  });
   return { login: mutate };
 }
 
 function useLoginGoogle() {
-  const { mutate } = useMutation({ mutationFn: authFirebase });
+  const [googleResponse, setGoogleResponse] = useState<User | null>(null);
+  const { setAuth, auth } = authStore();
+  const { mutate, isSuccess, data } = useMutation({ mutationFn: authFirebase });
+
   const login = async () => {
     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
     const googleResponse = await GoogleSignin.signIn();
-    const credentials = auth.GoogleAuthProvider.credential(
+    const credentials = firebaseAuth.GoogleAuthProvider.credential(
       googleResponse.idToken
     );
-    const firebaseResponse = await auth().signInWithCredential(credentials);
+    const firebaseResponse =
+      await firebaseAuth().signInWithCredential(credentials);
+    setGoogleResponse(googleResponse);
     mutate({
       idToken: await firebaseResponse.user.getIdToken(),
       profileMetaData: {
@@ -39,5 +64,24 @@ function useLoginGoogle() {
       },
     });
   };
+
+  useEffect(() => {
+    const handleStoreAuth = () => {
+      if (isSuccess && !auth && googleResponse) {
+        setHeaderAuthorization(data.jwt);
+        setAuth({
+          jwt: data.jwt,
+          user: {
+            email: data.user.email,
+            inicio: data.user.createdAt,
+            nome: `${googleResponse.user.name} ${googleResponse.user.familyName}`,
+            foto: googleResponse.user.photo,
+          },
+        });
+      }
+    };
+    handleStoreAuth();
+  }, [auth, data, googleResponse, isSuccess, setAuth]);
+
   return { login };
 }

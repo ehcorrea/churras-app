@@ -18,6 +18,8 @@ export function InicioScreen() {
     router.push('/login');
   };
 
+  const handleEntrarComFacebook = () => [router.replace('/home')];
+
   return (
     <ImageBackground
       className="flex-1"
@@ -46,7 +48,7 @@ export function InicioScreen() {
             </View>
             <Spancing y={10} />
             <View className="flex-row">
-              <Button.Account />
+              <Button.Account onPress={handleEntrarComFacebook} />
               <Spancing x={10} />
               <Button.Account variant="google" onPress={loginGoogle} />
             </View>

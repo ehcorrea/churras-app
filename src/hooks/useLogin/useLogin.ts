@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GoogleSignin, User } from '@react-native-google-signin/google-signin';
 import firebaseAuth from '@react-native-firebase/auth';
+import { router } from 'expo-router';
 
 import { authEmail, authFirebase } from '@/services/api';
 import { authStore } from '@/stores/authStore';
@@ -42,7 +43,7 @@ function useLoginEmail() {
 
 function useLoginGoogle() {
   const [googleResponse, setGoogleResponse] = useState<User | null>(null);
-  const { setAuth, auth } = authStore();
+  const { setAuth, auth, clearAuth } = authStore();
   const { mutate, isSuccess, data } = useMutation({ mutationFn: authFirebase });
 
   const login = async () => {
@@ -54,6 +55,7 @@ function useLoginGoogle() {
     const firebaseResponse =
       await firebaseAuth().signInWithCredential(credentials);
     setGoogleResponse(googleResponse);
+    clearAuth();
     mutate({
       idToken: await firebaseResponse.user.getIdToken(),
       profileMetaData: {
@@ -78,6 +80,7 @@ function useLoginGoogle() {
             foto: googleResponse.user.photo,
           },
         });
+        router.replace('/home');
       }
     };
     handleStoreAuth();

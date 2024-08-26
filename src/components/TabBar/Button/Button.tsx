@@ -25,8 +25,8 @@ export function Button({ isFocused, name, onPress }: ButtonProps) {
   }, [isFocused, scale]);
 
   const viewStyle = useAnimatedStyle(() => {
-    const scaleValue = interpolate(scale.value, [0, 1], [1, 1.4]);
-    const top = interpolate(scale.value, [0, 1], [0, -8]);
+    const scaleValue = interpolate(scale.value, [0, 1], [1, 1.2]);
+    const top = interpolate(scale.value, [0, 1], [0, -2]);
     return {
       transform: [{ scale: scaleValue }],
       top,

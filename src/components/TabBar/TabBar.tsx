@@ -1,10 +1,13 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button } from './Button/Button';
 
 import * as S from './TabBar.styles';
 
 export function TabBar(props: BottomTabBarProps) {
+  const { bottom } = useSafeAreaInsets();
+
   const onPress = ({
     key,
     name,
@@ -23,7 +26,7 @@ export function TabBar(props: BottomTabBarProps) {
   };
 
   return (
-    <S.Container>
+    <S.Container bottom={bottom}>
       {props.state.routes.map((route, index) => {
         return (
           <Button

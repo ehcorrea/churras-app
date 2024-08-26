@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>884462022086-db0pumr05c53llll5pipkigtfsujvdg0.apps.googleusercontent.com</string>
+	<string>975234658221-2249eursu0p4kotnv6ohr9vqt1jstg0r.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.884462022086-db0pumr05c53llll5pipkigtfsujvdg0</string>
+	<string>com.googleusercontent.apps.975234658221-2249eursu0p4kotnv6ohr9vqt1jstg0r</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>884462022086-1nrue7ef000dcccahob2tqgjs019v140.apps.googleusercontent.com</string>
+	<string>975234658221-7bo9mqm0ijvlhqvbaork0jud9b25pk60.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBzj7XEd8klqTkLIcpcWVd70gOdcOVGhFo</string>
+	<string>AIzaSyATISb6FO7c4iEuSEaLPxNxSGsEFvZKv_s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>884462022086</string>
+	<string>975234658221</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.zctechs.churrasapp</string>
 	<key>PROJECT_ID</key>
-	<string>churras-app-54f02</string>
+	<string>churras-app-homolog</string>
 	<key>STORAGE_BUCKET</key>
-	<string>churras-app-54f02.appspot.com</string>
+	<string>churras-app-homolog.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:884462022086:ios:bb0f4c05744beff59c16c7</string>
+	<string>1:975234658221:ios:2ccc84506bf531c8937b24</string>
 </dict>
 </plist>

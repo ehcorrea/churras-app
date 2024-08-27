@@ -50,7 +50,14 @@
         }
       ],
       "@react-native-google-signin/google-signin",
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-2919537850194694~9480738617",
+          "iosAppId": "ca-app-pub-2919537850194694~1793820281"
+        }
+      ],
     ],
     "experiments": {
       "typedRoutes": true

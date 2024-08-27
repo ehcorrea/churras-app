@@ -59,7 +59,7 @@ function useLoginGoogle() {
     mutate({
       idToken: await firebaseResponse.user.getIdToken(),
       profileMetaData: {
-        firstName: googleResponse.user.name,
+        firstName: googleResponse.user.givenName,
         lastName: googleResponse.user.familyName,
         email: googleResponse.user.email,
         phoneNumber: firebaseResponse.user.phoneNumber,
@@ -76,7 +76,7 @@ function useLoginGoogle() {
           user: {
             email: data.user.email,
             inicio: data.user.createdAt,
-            nome: `${googleResponse.user.name} ${googleResponse.user.familyName}`,
+            nome: `${googleResponse.user.name}`,
             foto: googleResponse.user.photo,
           },
         });

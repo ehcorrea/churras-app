@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
+import mobileAds from 'react-native-google-mobile-ads';
 
 import { Provider } from '@/components';
 
 SplashScreen.preventAutoHideAsync();
+mobileAds().initialize();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({

@@ -12,8 +12,8 @@ export const Container = styled.View<ContainerProps>`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: ${theme.rhvalue(50)}px;
     margin: 5%;
+    margin-top: ${theme.rhvalue(50)}px;
   `}
 `;
 

@@ -7,7 +7,7 @@ export const tabBarRoutes: TabBarRoutes = {
   },
   eventos: {
     title: 'Eventos',
-    icon: 'calendar',
+    icon: 'bookmark',
   },
   menu: {
     title: 'Menu',

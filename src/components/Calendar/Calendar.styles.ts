@@ -1,11 +1,9 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { WeekCalendar } from 'react-native-calendars';
 
 export const Container = styled.View`
-  ${({ theme }) => css`
-    min-width: 1px;
-    min-height: ${theme.rhvalue(50)}px;
-  `}
+  height: 75px;
+  min-width: 1px;
 `;
 
 export const Calendar = styled(WeekCalendar).attrs(({ theme, ...props }) => ({
